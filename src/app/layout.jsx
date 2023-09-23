@@ -6,7 +6,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <h1>shary: a pastebin & url shortening service</h1>
+        {children}
+      </body>
     </html>
   )
 }
