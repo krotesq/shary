@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <h1>shary: a pastebin & url shortening service</h1>
-      <Link href='/p'>Create a new paste</Link>
+      <Link href='/p/new'>Create a new paste</Link>
       <br />
-      <Link href='/s'>Short an URL</Link>
+      <Link href='/s/new'>Short an URL</Link>
     </>
   )
 }
