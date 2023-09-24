@@ -1,7 +1,7 @@
 import { prisma } from "@/prisma";
 import { redirect } from "next/navigation"
 
-const Short = async ({ params }) => {
+const Ref = async ({ params }) => {
 
   const sid = params.sid;
 
@@ -40,4 +40,4 @@ const Short = async ({ params }) => {
   )
 }
 
-export default Short
+export default Ref

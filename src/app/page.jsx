@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Link href='/p/new'>Create a new paste</Link>
       <br />
-      <Link href='/s/new'>Short an URL</Link>
+      <Link href='/s/'>Short an URL</Link>
     </>
   )
 }

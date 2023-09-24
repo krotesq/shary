@@ -11,6 +11,8 @@ export async function POST(request) {
   if (!requestData.longUrl) {
     return NextResponse.json({
       message: "Missing url in request payload"
+    }, {
+      status: 400,
     })
   }
 
@@ -24,6 +26,8 @@ export async function POST(request) {
   if (!isValidUrl(longUrl)) {
     return NextResponse.json({
       message: "Given URL is not valid"
+    }, {
+      status: 400,
     });
   }
 
@@ -58,6 +62,8 @@ export async function POST(request) {
 
   return NextResponse.json({
     message: "URL succesfully shorted",
-    data: responseData,
-  })
+    data: responseData
+  }, {
+    status: 201
+  });
 }

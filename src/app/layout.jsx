@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const metadata = {
   title: 'shary | pastebin and url shortening',
   description: 'a pastebin and url shortening service',
