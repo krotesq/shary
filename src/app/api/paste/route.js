@@ -23,13 +23,14 @@ export async function POST(request) {
 
   // save paste to database
   try {
-    prisma.paste.create({
+    await prisma.paste.create({
+      data: {
       pid,
       url,
       title: requestData.title,
       text: requestData.text,
       language: requestData.language
-    })
+    }})
   }
   catch (e) {
     console.log(e);
