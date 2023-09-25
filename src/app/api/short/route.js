@@ -57,9 +57,9 @@ export async function POST(request) {
 
   // send response
   const responseData = {
-      longUrl,
-      shortUrl,
       sid,
+      shortUrl,
+      longUrl,
       askBeforeRef: requestData.askBeforeRef,
   }
 
