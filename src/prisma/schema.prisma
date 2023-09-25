@@ -24,8 +24,7 @@ model Paste {
   url String @unique
   title String
   text String
-  highlighted Boolean
-  highlightLanguage String
+  language String
   hits DateTime[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
