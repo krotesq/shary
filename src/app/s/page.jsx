@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 
 export default function Short() {
 
-  const create = async (formData) => {
+  async function create(formData) {
     "use server"
     // validate url
   
