@@ -1,4 +1,5 @@
 import { prisma } from "@/prisma";
+import Chart from "@/app/components/Chart";
 
 export default async function ShortInfo({ params }) {
 
@@ -13,18 +14,18 @@ export default async function ShortInfo({ params }) {
     return (
       <div>
         <p>Not found</p>
-        <br />
-        <a href="/s">Short a new URL</a>
       </div>
     )
   }
 
   return (
     <div>
+      <h3>Link stats</h3>
       <ul>
-        <li>{data.shortUrl}</li>
-        <li>{data.longUrl}</li>
-        <li>{JSON.stringify(data.hits)}</li>
+        <p>{data.shortUrl}</p>
+        <p>{data.longUrl}</p>
+        <h3>Hits this month</h3>
+        <Chart hits={data.hits}></Chart>
       </ul>
     </div>
   )
