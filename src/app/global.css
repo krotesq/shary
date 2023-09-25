@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter);
+  color: white;
+  background-color: #090909;
+  opacity: 1;
+  background-image:  linear-gradient(#111111 1.3px, transparent 1.3px), linear-gradient(to right, #111111 1.3px, #090909 1.3px);
+  background-size: 26px 26px;
+}
