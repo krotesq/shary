@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import styles from "./page.module.css"
 
 export default function Short() {
 
@@ -26,12 +27,10 @@ export default function Short() {
   }
 
   return (
-    <div>
-      <form action={create}>
-        <label htmlFor="longUrl">Enter your long URL: </label>
-        <input type="text" name="longUrl" id="longUrl" required />
-        <button type="submit">Go</button>
-      </form>
-    </div>
+    <form action={create} className={styles.form}>
+      <label htmlFor="longUrl">Your long URL: </label>
+      <input type="text" name="longUrl" id="longUrl" required className={styles.input}/>
+      <button type="submit" className={styles.button}>Short plz</button>
+    </form>
   )
 }
