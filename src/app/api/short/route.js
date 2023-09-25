@@ -44,9 +44,12 @@ export async function POST(request) {
     });
   }
   catch (e) {
+    console.log(e);
     if (e instanceof Prisma.PrismaClientKnownRequestError) {
       return NextResponse.json({
         message: "Error shortening URL"
+      }, {
+        status: 401
       });
     }
     throw e;
