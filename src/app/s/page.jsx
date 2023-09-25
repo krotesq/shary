@@ -18,7 +18,6 @@ const Short = () => {
         })
       }
     );
-    console.log(response.status)
     if (response.status == 201) {
       const data = await response.json();
       console.log(`${process.env.DOMAIN}/s/info/${data.data.sid}`)
