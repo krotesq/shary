@@ -13,7 +13,11 @@ export default async function Referral({ params }) {
 
   if (!data) {
     return (
-      <p>Not found</p>
+      <div>
+        <p>Not found</p>
+        <br />
+        <a href="/s">Short a new URL</a>
+      </div>
     )
   }
 
