@@ -1,3 +1,6 @@
+import { nanoid } from "nanoid";
+import { Prisma } from "@prisma/client";
+import { prisma } from "@/prisma";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
@@ -14,13 +17,47 @@ export async function POST(request) {
     })
   }
 
-  // create paste
+  // create pid and url
+  const pid = nanoid(6)
+  const url = `http://${process.env.DOMAIN}/p/${pid}`;
 
+  // save paste to database
+  try {
+    prisma.paste.create({
+      pid,
+      url,
+      title: requestData.title,
+      text: requestData.text,
+      language: requestData.language
+    })
+  }
+  catch (e) {
+    console.log(e);
+    if (e instanceof Prisma.PrismaClientKnownRequestError) {
+      return NextResponse.json({
+        message: "Error creating paste"
+      }, {
+        status: 401
+      });
+    }
+    throw e;
+  }
+  
 
+  // create response data
+  const responseData = {
+    pid,
+    url,
+    title: requestData.title,
+    text: requestData.text,
+    language: requestData.language,
+  }
+
+  // send response
   return NextResponse.json({
-    message: "Paste created"
+    message: "Paste created",
+    data: responseData
   }, {
     status: 201,
   })
-
 }
