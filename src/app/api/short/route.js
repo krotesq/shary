@@ -16,14 +16,12 @@ export async function POST(request) {
     })
   }
 
-  // get data
+  // create sid and url
   const sid = nanoid(6);
-  const longUrl = requestData.longUrl;
-  const shortUrl = process.env.DOMAIN + "/s/" + sid;
-  const askBeforeRef = requestData.askBeforeRef;
+  const shortUrl = `http://${process.env.DOMAIN}/s/${sid}`;
 
   // check if given longUrl is a valid url
-  if (!isValidUrl(longUrl)) {
+  if (!isValidUrl(requestData.longUrl)) {
     return NextResponse.json({
       message: "Given URL is not valid"
     }, {
@@ -31,14 +29,14 @@ export async function POST(request) {
     });
   }
 
-  // save to database
+  // save short to database
   try {
     await prisma.short.create({
       data: {
         sid,
-        longUrl,
+        longUrl: requestData.longUrl,
         shortUrl,
-        askBeforeRef,
+        askBeforeRef: requestData.askBeforeRef,
         hits: []
       }
     });
@@ -55,14 +53,15 @@ export async function POST(request) {
     throw e;
   }
 
-  // send response
+  // create response data
   const responseData = {
       sid,
       shortUrl,
-      longUrl,
+      longUrl: requestData.longUrl,
       askBeforeRef: requestData.askBeforeRef,
   }
 
+  // send response
   return NextResponse.json({
     message: "URL succesfully shorted",
     data: responseData
