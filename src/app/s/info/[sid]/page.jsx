@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma";
 
-const ShortInfo = async ({ params }) => {
+export default async function ShortInfo({ params }) {
 
   // load info about url
   const data = await prisma.short.findUnique({
@@ -29,5 +29,3 @@ const ShortInfo = async ({ params }) => {
     </div>
   )
 }
-
-export default ShortInfo

@@ -1,7 +1,7 @@
 import { prisma } from "@/prisma";
 import { redirect } from "next/navigation"
 
-const Ref = async ({ params }) => {
+export default async function Referral({ params }) {
 
   const sid = params.sid;
 
@@ -39,5 +39,3 @@ const Ref = async ({ params }) => {
     </div>
   )
 }
-
-export default Ref

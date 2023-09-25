@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-const Short = () => {
+export default function Short() {
 
   const create = async (formData) => {
     "use server"
@@ -35,5 +35,3 @@ const Short = () => {
     </div>
   )
 }
-
-export default Short
