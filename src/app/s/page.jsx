@@ -27,10 +27,14 @@ export default function Short() {
   }
 
   return (
-    <form action={create} className={styles.form}>
-      <label htmlFor="longUrl">LONG URL: </label>
-      <input type="text" name="longUrl" id="longUrl" required className={styles.input}/>
-      <button type="submit" className={styles.button}>SHORT PLS</button>
-    </form>
+    <div className={styles.short}>
+      <h3>SHORT AN URL</h3>
+      <form action={create} className={styles.form}>
+        <label htmlFor="longUrl">LONG URL: </label>
+        <input type="text" name="longUrl" id="longUrl" required className={styles.input}/>
+        <button type="submit" className={styles.button}>SHORT PLS</button>
+      </form>
+    </div>
+    
   )
 }

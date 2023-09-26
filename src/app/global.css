@@ -22,9 +22,6 @@ body {
   background-size: 26px 26px;
 }
 
-main {
-  width: 50%;
-}
 
 input[type="text"] {
   padding: 4px;

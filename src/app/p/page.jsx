@@ -1,4 +1,6 @@
 import { redirect } from "next/navigation";
+import MonacoEditor from "../components/MonacoEditor";
+import styles from "./page.module.css"
 
 export default function Paste() {
 
@@ -14,7 +16,7 @@ export default function Paste() {
       body: JSON.stringify({
         title: formData.get("title"),
         text: formData.get("text"),
-        language: formData.get("language")
+        language: "text"
       })
     });
 
@@ -25,24 +27,16 @@ export default function Paste() {
     }
   }
 
+  const code = "console.log(`hello ${name}`)";
+
   return (
-    <div>
-      <form action={create}>
+    <div className={styles.paste}>
+      <h3>CREATE A NEW PASTE</h3>
+      <MonacoEditor code={code}/>
+      <form action={create} className={styles.form}>
         <label htmlFor="title">Title: </label>
         <input type="text" name="title" id="title" />
-        <br />
-        <label htmlFor="text">Text: </label>
-        <textarea name="text" id="text" cols="40" rows="5"></textarea>
-        <br />
-        <label htmlFor="language">Language: </label>
-        <select name="language" id="language">
-          <option value="text">Text</option>
-          <option value="javascript">Javascript</option>
-          <option value="python">Python</option>
-          <option value="cpp">C++</option>
-        </select>
-        <br />
-        <input type="submit" name="submit" id="submit" value='Go' />
+        <button name="submit" id="submit">PASTE PLS</button>
       </form>
     </div>
   )
