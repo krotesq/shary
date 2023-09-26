@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
         <header className={styles.header}>
           <h1>SHARY: A PASTEBIN & URL SHORTENING SERVICE</h1>
           <nav className={styles.nav}>
-            <Link href='/p'>Create a paste</Link>
-            <Link href='/s'>Short an URL</Link>
+            <Link href='/s'>SHORT AN URL</Link>
+            <Link href='/p'>CREATE A NEW PASTE</Link>
           </nav>
         </header>
         <main>
