@@ -41,19 +41,7 @@ export default function Chart({ hits }) {
     }
   })
 
-  hitsPerDay = {
-    1: 1,
-    2: 34,
-    3: 68,
-    4: 34,
-    5: 23,
-    6: 78,
-    9: 23,
-    23: 1,
-    24: 13,
-    29: 27,
-    30: 15
-  }
+
 
   // create data
   const data = {
