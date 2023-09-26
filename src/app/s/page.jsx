@@ -28,9 +28,9 @@ export default function Short() {
 
   return (
     <form action={create} className={styles.form}>
-      <label htmlFor="longUrl">Your long URL: </label>
+      <label htmlFor="longUrl">LONG URL: </label>
       <input type="text" name="longUrl" id="longUrl" required className={styles.input}/>
-      <button type="submit" className={styles.button}>Short plz</button>
+      <button type="submit" className={styles.button}>SHORT PLS</button>
     </form>
   )
 }
