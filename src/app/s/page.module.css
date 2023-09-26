@@ -1,27 +1,8 @@
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  width: 60%;
-}
-
-
-.input {
-  border: none;
-  background-color: rgb(29, 29, 37);
-  border-radius: 5px;
-  font-size: 1.2rem;
-  padding: .2rem;
-  color: white;
-  text-align: center;
-  outline: none;
-}
-
-.button {
-  border: none;
-  outline: none;
-  width: 10rem;
-  font-size: 1.2rem;
+  width: 100%;
 }
